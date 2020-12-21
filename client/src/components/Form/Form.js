@@ -35,7 +35,7 @@ const Form = ({currentId, setCurrentId})=>{
     return(
        <Paper className={classes.paper}>
            <form autoComplete="off" noValidate className={`${classes.root}${classes.form}`} onSubmit={handleSubmit}>
-            <Typography variant="h6">{currentId ? "Editar": "Crear"} una memoria</Typography>
+            <Typography variant="h6">{currentId ? "Editar": "Crear"} un recuerdo</Typography>
             <TextField 
                 name="creator"
                 variant="outlined"
@@ -66,7 +66,7 @@ const Form = ({currentId, setCurrentId})=>{
                 label="Tags"
                 fullWidth
                 value={postData.tags}
-                onChange={(e)=> setPostData({...postData, tags: e.target.value})}
+                onChange={(e)=> setPostData({...postData, tags: e.target.value.split(",")})}
             />
             <div className={classes.fileInput}>
                 <FileBase
